@@ -7,8 +7,7 @@ namespace LambdaDemo
 {
     class Program
     {
-        static int myNum = 3,
-            myNum2 = 4;
+        static int myNum = 3, myNum2 = 4;
 
         static Func<int, int, int> minus = (num1, num2) => num1 - num2;
 
@@ -69,9 +68,28 @@ namespace LambdaDemo
                 Console.WriteLine($"${b.Price} {b.Title}");
             }
 
-        }
-
-       
+        }      
 
     }
+    
+    class BookRepo
+    {
+        public List<Book> GetBooks()
+        {
+            return new List<Book>
+            {
+                new Book() { Title = "Test1", Price = 1 },
+                new Book() { Title = "Test2", Price = 2 },
+                new Book() { Title = "Test3", Price = 3 }
+            };
+        }
+    }
+    
+    public class Book
+    {
+        public string Title { get; set; }
+        public float Price { get; set; }
+    }
+    
+    
 }
